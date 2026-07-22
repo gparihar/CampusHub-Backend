@@ -17,8 +17,7 @@ router.get("/:id", getEventById);
 
 // Protected Routes
 // Remove adminOnly temporarily while developing if needed
-router.post("/", protect, createEvent);
-router.put("/:id", protect, updateEvent);
-router.delete("/:id", protect, deleteEvent);
-
+router.post("/", protect, adminOnly, createEvent);
+router.put("/:id", protect, adminOnly, updateEvent);
+router.delete("/:id", protect, adminOnly, deleteEvent);
 export default router;
